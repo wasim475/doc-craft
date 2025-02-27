@@ -9,7 +9,7 @@ tags: ["technology", "analytics"]
 ---
 
 ## About Analysis
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore pariatur repellendus vero doloremque sint, quod aliquid possimus 
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. pariatur repellendus vero doloremque sint, quod aliquid possimus 
 esse labore maxime quaerat error enim! Velit incidunt soluta pariatur doloribus hic! Distinctio earum ea enim repudiandae repellat 
 vero dignissimos sequi optio nulla explicabo provident ipsum eaque incidunt, ducimus dolore dolor accusamus. Exercitationem?
 
