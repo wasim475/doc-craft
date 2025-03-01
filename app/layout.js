@@ -2,7 +2,7 @@ import { getDocumentContent } from '../lib/doc';
 
 
 export default function RootLayout({ children }) {
-  getDocumentContent()
+  const allDocumnets = getDocumentContent()
   return (
     <html lang="en">
       <body>
