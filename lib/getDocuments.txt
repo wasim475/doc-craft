@@ -1,0 +1,118 @@
+ const fileNames = fs.readdirSync(postsDirectory);
+  const allDocumnets = fileNames.map((fileName) => {
+    const id = fileName.replace(".md", "");
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, "utf-8");
+    const matterResult = matter(fileContents);
+    return {
+      id,
+      ...matterResult.data,
+    };
+
+
+🔍 লাইন-বাই-লাইন ব্যাখ্যা
+
+const fileNames = fs.readdirSync(postsDirectory);
+fs.readdirSync(postsDirectory) → সিঙ্ক্রোনাস (Sync) ভাবে postsDirectory ফোল্ডারের সব ফাইলের নাম অ্যারেতে নিয়ে আসে।
+fileNames ভেরিয়েবলে সেই অ্যারে সংরক্ষণ করা হয়।
+এই লাইনটি মূলত ডিরেক্টরির সব .md ফাইল লোড করার জন্য ব্যবহৃত হয়।
+✅ উদাহরণ:
+ধরা যাক, postsDirectory ফোল্ডারের মধ্যে নিচের ফাইলগুলো আছে—
+
+
+/posts
+  ├── post1.md
+  ├── post2.md
+  ├── post3.md
+তাহলে fileNames ভেরিয়েবলের ভ্যালু হবে:
+
+
+["post1.md", "post2.md", "post3.md"]
+
+const allDocumnets = fileNames.map((fileName) => {
+fileNames.map(...) প্রত্যেকটি ফাইলের জন্য একটি নতুন অবজেক্ট তৈরি করবে।
+প্রতিটি fileName নেওয়া হবে এবং প্রসেস করা হবে।
+✅ প্রথম ইটারেশনে (loop)
+
+
+fileName = "post1.md"
+
+const id = fileName.replace(".md", "");
+fileName.replace(".md", "") → .md এক্সটেনশন রিমুভ করে শুধু ফাইলের নাম সংরক্ষণ করা হয়।
+নতুন ভেরিয়েবল id তৈরি করা হয়।
+✅ উদাহরণ:
+
+
+"post1.md".replace(".md", "");  // Output: "post1"
+js
+Copy
+Edit
+const fullPath = path.join(postsDirectory, fileName);
+path.join(postsDirectory, fileName) → postsDirectory এবং fileName একসাথে যোগ করে সম্পূর্ণ ফাইল পাথ তৈরি করা হয়।
+✅ উদাহরণ:
+
+
+path.join("/home/user/posts", "post1.md");  
+// Output: "/home/user/posts/post1.md"
+
+const fileContents = fs.readFileSync(fullPath, "utf-8");
+fs.readFileSync(fullPath, "utf-8") → fullPath এ থাকা ফাইলের সম্পূর্ণ কনটেন্ট স্ট্রিং আকারে পড়ে।
+"utf-8" মানে ফাইলটি টেক্সট ফরম্যাটে পড়তে হবে।
+✅ উদাহরণ:
+ধরা যাক, post1.md-এর কনটেন্ট—
+
+
+---
+title: "Hello World"
+date: "2025-02-28"
+---
+This is the content of the post.
+তাহলে fileContents হবে—
+
+
+"---
+title: \"Hello World\"
+date: \"2025-02-28\"
+---
+This is the content of the post."
+
+const matterResult = matter(fileContents);
+matter(fileContents) → Front Matter (YAML ডাটা) পার্স করে JSON অবজেক্ট বানায়।
+এটি gray-matter লাইব্রেরির ফাংশন যা .md ফাইল থেকে মেটাডাটা (যেমন: title, date) আলাদা করে।
+✅ Output হবে:
+
+
+{
+  data: {
+    title: "Hello World",
+    date: "2025-02-28"
+  },
+  content: "This is the content of the post."
+}
+
+return {
+  id,
+  ...matterResult.data,
+};
+একটি অবজেক্ট রিটার্ন করা হয়, যেখানে:
+id: ফাইলের নাম (এক্সটেনশন ছাড়া)
+...matterResult.data: মেটাডাটা (title, date) কপি করা হয়
+✅ উদাহরণ:
+
+js
+Copy
+Edit
+{
+  id: "post1",
+  title: "Hello World",
+  date: "2025-02-28"
+}
+🔥 চূড়ান্ত কোডের আউটপুট (allDocuments)
+
+[
+  { id: "post1", title: "Hello World", date: "2025-02-28" },
+  { id: "post2", title: "JavaScript Basics", date: "2025-02-27" },
+  { id: "post3", title: "Next.js Guide", date: "2025-02-26" }
+]
+
+📌 এইভাবে, Markdown ফাইল থেকে title, date নিয়ে অ্যারে বানানো হয়! 
