@@ -10,7 +10,7 @@ export default function Sidebar() {
           >
             <span className="truncate">Introduction</span>
           </a>
-          <ul role="list" style="opacity: 1">
+          <ul role="list" style={{opacity: 1}}>
             <li>
               <a
                 className="flex justify-between gap-2 py-1 pl-7 pr-3 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
