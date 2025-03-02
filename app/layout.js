@@ -1,3 +1,4 @@
+import Header from '../components/header';
 import { getDocumentContent } from '../lib/doc';
 
 
@@ -7,7 +8,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <Header>
         {children}
+        </Header>
       </body>
     </html>
   );
