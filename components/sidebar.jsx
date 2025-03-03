@@ -1,4 +1,5 @@
-export default function Sidebar() {
+export default function Sidebar({docs}) {
+ 
   return (
     <nav className="hidden lg:mt-10 lg:block">
       <ul role="list" className="border-l border-transparent">
