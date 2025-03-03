@@ -1,5 +1,6 @@
 export default function Sidebar({docs}) {
- 
+ const roots = docs.filter((doc)=> !doc.parent)
+ console.log("roots:",roots)
   return (
     <nav className="hidden lg:mt-10 lg:block">
       <ul role="list" className="border-l border-transparent">
