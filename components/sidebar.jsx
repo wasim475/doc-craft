@@ -1,9 +1,19 @@
-export default function Sidebar({docs}) {
- const roots = docs.filter((doc)=> !doc.parent)
- console.log("roots:",roots)
+export default function Sidebar({ docs }) {
+  const roots = docs.filter((doc) => !doc.parent);
+  const nonRoot = Object.groupBy(docs.filter((doc) => doc.parent),({ parent }) => parent);
+
+  console.log("nonRoot",nonRoot)
+
   return (
     <nav className="hidden lg:mt-10 lg:block">
       <ul role="list" className="border-l border-transparent">
+
+      {
+        roots.map((rootNode)=>(
+          <li key={rootNode.id}></li>
+        ))
+      }
+
         <li className="relative">
           <a
             aria-current="page"
@@ -12,7 +22,7 @@ export default function Sidebar({docs}) {
           >
             <span className="truncate">Introduction</span>
           </a>
-          <ul role="list" style={{opacity: 1}}>
+          <ul role="list" style={{ opacity: 1 }}>
             <li>
               <a
                 className="flex justify-between gap-2 py-1 pl-7 pr-3 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
@@ -39,7 +49,7 @@ export default function Sidebar({docs}) {
             </li>
           </ul>
         </li>
-        <li className="relative">
+        {/* <li className="relative">
           <a
             className="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
             href="/docs/quickstart"
@@ -86,7 +96,7 @@ export default function Sidebar({docs}) {
           >
             <span className="truncate">Webhooks</span>
           </a>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
