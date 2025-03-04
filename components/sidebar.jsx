@@ -14,7 +14,7 @@ export default function Sidebar({ docs }) {
         ))
       }
 
-        {/* <li className="relative">
+        <li className="relative">
           <a
             aria-current="page"
             className="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm text-zinc-900 transition dark:text-white"
@@ -48,7 +48,7 @@ export default function Sidebar({ docs }) {
               </a>
             </li>
           </ul>
-        </li> */}
+        </li>
         {/* <li className="relative">
           <a
             className="flex justify-between gap-2 py-1 pl-4 pr-3 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
