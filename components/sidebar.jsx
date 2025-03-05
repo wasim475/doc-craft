@@ -12,7 +12,7 @@ const Sidebar = ({ docs }) => {
 
     return (
         <nav className="lg:block my-10">
-            <ul>
+            {/* <ul>
                 <div className="relative mt-3 pl-2">
                     <div className="absolute inset-x-0 top-0 bg-zinc-800/2.5 will-change-transform dark:bg-white/2.5"></div>
                     <div className="absolute inset-y-0 left-2 w-px bg-zinc-900/10 dark:bg-white/5"></div>
@@ -42,7 +42,7 @@ const Sidebar = ({ docs }) => {
                                                         href={`/docs/${rootNode.id}/${subRoot.id}`}
                                                     >
                                                         <span className="truncate">
-                                                            {subRoot.title}
+                                                            {subRoot.id}
                                                         </span>
                                                     </Link>
                                                 </li>
@@ -54,7 +54,7 @@ const Sidebar = ({ docs }) => {
                         ))}
                     </ul>
                 </div>
-            </ul>
+            </ul> */}
         </nav>
     );
 };
