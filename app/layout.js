@@ -8,6 +8,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <h1 className='text-red-500'>kire vhai</h1>
         <div className="h-full lg:ml-72 xl:ml-80">
           <Header docs={allDocumnets} />
           <div className="relative px-4 pt-14 sm:px-6 lg:px-8">
