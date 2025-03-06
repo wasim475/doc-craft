@@ -8,9 +8,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header docs ={allDocumnets}>
+        <Header docs ={allDocumnets}/>
         {children}
-        </Header>
+        
       </body>
     </html>
   );
