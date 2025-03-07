@@ -1,5 +1,5 @@
-export default function page({params}){
-    const {contentid}= params
+export default function page({params:{contentid}}){
+    
     console.log(contentid) 
     return (
         <div>
