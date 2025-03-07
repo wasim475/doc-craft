@@ -1,4 +1,5 @@
-import Logo from "./Logo";
+
+import Logo from './logo';
 import Search from "./Search";
 import Sidebar from "./Sidebar";
 
