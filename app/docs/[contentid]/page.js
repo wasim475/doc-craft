@@ -1,6 +1,6 @@
-export default function page({params:{contentid}}){
+export default function ContentPage({params:{contentid}}){
     
-    console.log(contentid) 
+    
     return (
         <div>
             <h1>hello {contentid}</h1>
