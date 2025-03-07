@@ -1,6 +1,6 @@
 
 
-const page = ({params:{subcontentid}}) => {
+const SubContentPage = ({params:{subcontentid}}) => {
   return (
     <div>
       <h1>hello {subcontentid}</h1>
@@ -8,4 +8,4 @@ const page = ({params:{subcontentid}}) => {
   )
 }
 
-export default page
+export default SubContentPage
