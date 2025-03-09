@@ -1,25 +1,25 @@
-// import { Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import Header from "../components/header";
 import { getDocumentContent } from "../lib/doc";
-// const inter = Inter({ subsets: ["latin"] });
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const inter = Inter({ subsets: ["latin"] });
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
 import './globals.css'
 export default function RootLayout({ children }) {
   const allDocumnets = getDocumentContent();
   // console.log(allDocumnets)
   return (
     <html lang="en">
-      {/* <body className={inter.className}> */}
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={inter.className}>
+      {/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
         <div className="h-full lg:ml-72 xl:ml-80">
           <Header docs={allDocumnets} />
           <div className="relative px-4 pt-14 sm:px-6 lg:px-8">
