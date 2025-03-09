@@ -1,10 +1,10 @@
-import ContentDisplay from "../../../components/contentDisplay"
+import ContentDisplay from "@/components/contentDisplay"
 export default function ContentPage({params:{contentid}}){
     
     
     return (
         <div>
-            <ContentDisplay/>
+            <ContentDisplay contentid={contentid}/>
         </div>
     );
 }
