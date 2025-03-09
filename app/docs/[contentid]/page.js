@@ -4,7 +4,7 @@ export default function ContentPage({params:{contentid}}){
     
     return (
         <div>
-            <ContentDisplay contentid={contentid}/>
+            <ContentDisplay id={contentid}/>
         </div>
     );
 }
