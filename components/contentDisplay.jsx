@@ -26,7 +26,7 @@ const ContentDisplay = async ({id}) => {
       </div>
       <div
         className="lead"
-        // dangerouslySetInnerHTML={{__html: documentContent.contentHtml}} 
+        dangerouslySetInnerHTML={{__html: documentContent.contentHtml}} 
         />
     </article>
   )
