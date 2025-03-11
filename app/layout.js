@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import Header from "../components/header";
-import { getDocumentContent } from "../lib/doc";
+import { getDocuments } from "../lib/doc";
 const inter = Inter({ subsets: ["latin"] });
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 // });
 import './globals.css'
 export default function RootLayout({ children }) {
-  const allDocumnets = getDocumentContent();
+  const allDocumnets = getDocuments();
   // console.log(allDocumnets)
   return (
     <html lang="en">
