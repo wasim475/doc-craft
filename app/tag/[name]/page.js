@@ -8,7 +8,7 @@ const TagPage = ({params: {name}}) => {
     const matchedDocuments = getDocumentsByTag(docs, name);
 
     return (
-      <ContentDisplay id={matchedDocuments[0].id} />
+      // <ContentDisplay id={matchedDocuments[0].id} />
     )
   }
 
